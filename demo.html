@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Bai tap tinh chi so can nang cua co the</title>
+</head>
+<body>
+<h1> Tính chỉ số cân nặng</h1>
+<table>
+    <tr>
+        <td> Nhập cân nặng : (kg) </td>
+        <td> <input name id="weight" type="text" ></td>
+    </tr>
+    <tr>
+        <td> Nhập chiều cao : (m) </td>
+        <td> <input  name id="height"  type="text" ></td>
+    </tr>
+</table>
+<p> <input type="button" name id="BMI" value="Kiểm tra" onclick="bt();"></p>
+<p id="Result"></p>
+</body>
+<script>
+
+    function bt(){
+        let wei = document.getElementById('weight').value;
+        let hei = document.getElementById('height').value;
+        let BMI = wei/(hei*hei);
+        let Result = "";
+        if(BMI < 18.5) {
+            Result = 'Underweight';
+        }else if(BMI<25.0){
+            Result= 'Normal';
+        }
+        else if(BMI<30.0){
+            Result='Overweight' ;
+        }
+        else {
+            Result='Obese' ;
+        }
+        document.getElementById("Result").innerHTML = " Chỉ số BMI là :" + BMI + ". Bạn " + Result;
+    }
+</script>
+</html>
